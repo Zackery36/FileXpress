@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Top layer with Back and Search icons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Back Icon -->
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:layout_marginEnd="8dp"
+            android:onClick="onBackClicked" />
+
+        <!-- Spacer -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:hint="Search for a file"
+            android:padding="5dp"
+            android:inputType="text"
+            android:visibility="gone"/>
+
+        <!-- Spacer -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Search Icon -->
+        <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search" />
+    </LinearLayout>
+
+    <!-- Category Selection (Files, Videos, Images) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:id="@+id/categoryLayout">
+
+        <TextView
+            android:id="@+id/filesCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Files"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:onClick="onCategorySelected" />
+
+        <TextView
+            android:id="@+id/videosCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Videos"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:onClick="onCategorySelected" />
+
+        <TextView
+            android:id="@+id/imagesCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Images"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:onClick="onCategorySelected" />
+    </LinearLayout>
+
+    <!-- Path Indicator -->
+    <TextView
+        android:id="@+id/pathIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Current Directory"
+        android:textSize="14sp" />
+
+    <!-- RecyclerView to list files -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Selected Files Section (NEW Position) -->
+    <LinearLayout
+        android:id="@+id/selectedFilesLayoutG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/selectedFilesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Files"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <LinearLayout
+            android:id="@+id/selectedFilesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Selected Files Counter and Upload Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Selected Files Counter -->
+        <TextView
+            android:id="@+id/selectedFilesText"
+            android:layout_width="0dp"
+            android:layout_height="63dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="Selected files: 0"
+            android:textSize="16sp" />
+
+        <!-- Upload Button -->
+        <Button
+            android:id="@+id/uploadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            android:padding="16dp"
+            android:onClick="onUploadClicked" />
+    </LinearLayout>
+
+    <!-- Search Layout (hidden by default) -->
+    <LinearLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter file name"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/searchFileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Search Files"
+            android:onClick="onSearchFileClicked" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<!-- Layout for each selected file item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <!-- File name -->
+    <TextView
+        android:id="@+id/fileNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="File Name"
+        android:textSize="14sp"
+        android:paddingEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@android:color/black" />
+
+    <!-- Remove icon -->
+    <ImageView
+        android:id="@+id/removeImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@android:drawable/ic_delete"
+        android:contentDescription="Remove file"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<resources>
+
+    <!-- Akatsuki Theme -->
+    <style name="AppTheme_Akatsuki" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#D32F2F</item> <!-- Primary Red -->
+        <item name="colorPrimaryVariant">#B71C1C</item> <!-- Dark Red -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#FFCDD2</item> <!-- Light Red -->
+        <item name="colorPrimaryDark">#D32F2F</item> <!-- Dark Red for Menu Bar -->
+        <item name="android:navigationBarColor">#D32F2F</item> <!-- Matches Menu Bar -->
+        <item name="colorOnSecondary">@android:color/black</item>
+        <item name="android:windowBackground">#FFEBEE</item> <!-- Soft Pinkish Background -->
+        <item name="fileItemBackgroundColor">#FFCDD2</item> <!-- Light Red Background for Files -->
+        <item name="qrCodeColor">#B71C1C</item>
+        <item name="qrBackgroundColor">#00000000</item>
+        <item name="dialogBackgroundColor">#FFEBEE</item>
+    </style>
+
+    <!-- Ocean Breeze Theme -->
+    <style name="AppTheme_OceanBreeze" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#0288D1</item> <!-- Ocean Blue -->
+        <item name="colorPrimaryVariant">#01579B</item> <!-- Dark Blue -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">#0288D1</item>
+        <item name="colorSecondary">#B3E5FC</item> <!-- Light Blue -->
+        <item name="colorOnSecondary">@android:color/black</item>
+        <item name="android:navigationBarColor">#0288D1</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:statusBarColor">#0288D1</item> <!-- Status bar color -->
+        <item name="android:windowBackground">#E1F5FE</item> <!-- Light Gray -->
+        <item name="fileItemBackgroundColor">#B3E5FC</item> <!-- Light Blue Background for Files -->
+        <item name="qrCodeColor">#01579B</item>
+        <item name="qrBackgroundColor">#00000000</item>
+        <item name="dialogBackgroundColor">#E1F5FE</item>
+    </style>
+
+    <!-- Forest Glade Theme -->
+    <style name="AppTheme_ForestGlade" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#388E3C</item> <!-- Forest Green -->
+        <item name="colorPrimaryVariant">#1B5E20</item> <!-- Dark Green -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#A5D6A7</item> <!-- Light Green -->
+        <item name="colorPrimaryDark">#388E3C</item> <!-- Black Menu Bar Color -->
+        <item name="android:navigationBarColor">#388E3C</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+        <item name="android:windowBackground">#F1F8E9</item> <!-- Beige -->
+        <item name="fileItemBackgroundColor">#A5D6A7</item> <!-- Light Green Background for Files -->
+        <item name="qrCodeColor">#1B5E20</item>
+        <item name="qrBackgroundColor">#00000000</item>
+        <item name="dialogBackgroundColor">#F1F8E9</item>
+    </style>
+    <style name="CategoryStyle">
+        <item name="android:textColor">#333333</item> <!-- Text color -->
+        <item name="android:textSize">16sp</item> <!-- Text size -->
+        <item name="android:paddingStart">16dp</item> <!-- Left padding -->
+        <item name="android:paddingEnd">16dp</item> <!-- Right padding -->
+        <item name="android:layout_marginEnd">8dp</item> <!-- Margin between categories -->
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:fontFamily">sans-serif</item> <!-- Font family -->
+    </style>
+
+</resources>

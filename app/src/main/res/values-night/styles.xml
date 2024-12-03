@@ -1,0 +1,59 @@
+<resources>
+
+    <!-- Akatsuki Theme (Dark Mode) -->
+    <style name="AppTheme_Akatsuki" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#B71C1C</item> <!-- Dark Red -->
+        <item name="colorPrimaryVariant">#7F0000</item> <!-- Darker Red -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#8B0000</item> <!-- Deep Red -->
+        <item name="colorPrimaryDark">#7F0000</item> <!-- Darker Red for Menu Bar -->
+        <item name="android:navigationBarColor">#B71C1C</item> <!-- Matches Menu Bar -->
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:windowBackground">#2E2E2E</item> <!-- Dark Gray Background -->
+        <item name="fileItemBackgroundColor">#8B0000</item> <!-- Deep Red Background for Files -->
+        <item name="qrCodeColor">#FFCDD2</item> <!-- Lighter Red for QR Codes -->
+        <item name="qrBackgroundColor">#00000000</item>
+        <item name="dialogBackgroundColor">#2E2E2E</item> <!-- Dark Gray -->
+    </style>
+
+    <!-- Ocean Breeze Theme (Dark Mode) -->
+    <style name="AppTheme_OceanBreeze" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#01579B</item> <!-- Dark Blue -->
+        <item name="colorPrimaryVariant">#003B73</item> <!-- Deeper Blue -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#0288D1</item> <!-- Ocean Blue -->
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:navigationBarColor">#01579B</item> <!-- Matches Menu Bar -->
+        <item name="android:windowBackground">#1C1C1C</item> <!-- Dark Background -->
+        <item name="fileItemBackgroundColor">#0277BD</item> <!-- Mid-Blue for Files -->
+        <item name="qrCodeColor">#E1F5FE</item> <!-- Light for QR Codes -->
+        <item name="qrBackgroundColor">#00000000</item>
+        <item name="dialogBackgroundColor">#1C1C1C</item> <!-- Dark Background -->
+    </style>
+
+    <!-- Forest Glade Theme (Dark Mode) -->
+    <style name="AppTheme_ForestGlade" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1B5E20</item> <!-- Dark Green -->
+        <item name="colorPrimaryVariant">#003300</item> <!-- Forest Darker Green -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#33691E</item> <!-- Olive Green -->
+        <item name="android:navigationBarColor">#1B5E20</item> <!-- Matches Menu Bar -->
+        <item name="android:windowBackground">#121212</item> <!-- Darkest Gray -->
+        <item name="fileItemBackgroundColor">#33691E</item> <!-- Olive Background for Files -->
+        <item name="qrCodeColor">#A5D6A7</item> <!-- QR Light Green -->
+        <item name="qrBackgroundColor">#00000000</item>
+        <item name="dialogBackgroundColor">#121212</item> <!-- Super dark green gray -->
+    </style>
+
+    <!-- Common Category Style for Dark Mode -->
+    <style name="CategoryStyle">
+        <item name="android:textColor">#DDDDDD</item> <!-- Light Text for Dark Mode -->
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+</resources>

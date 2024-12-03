@@ -1,0 +1,22 @@
+<resources>
+    <!-- Primary colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="primary">#6200EE</color>
+    <color name="dark_red">#B71C1C</color>
+    <color name="maroon">#880E4F</color>
+    <color name="ocean_blue">#0288D1</color>
+    <color name="dark_blue">#01579B</color>
+    <color name="forest_green">#388E3C</color>
+    <color name="dark_green">#1B5E20</color>
+    <!-- Background color for the navigation bar -->
+    <color name="navigation_bar_bg">#FF6200EE</color>
+
+    <!-- Background color for selected files section -->
+    <color name="selected_files_bg">#FFBB86FC</color>
+
+    <!-- Default category button background color -->
+    <color name="default_category_bg">#FF03DAC5</color>
+
+</resources>

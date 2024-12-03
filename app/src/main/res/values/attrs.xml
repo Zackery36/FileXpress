@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="CustomTheme">
+        <attr name="fileItemBackgroundColor" format="color" />
+        <attr name="qrCodeColor" format="color" />
+        <attr name="qrBackgroundColor" format="color" />
+        <attr name="dialogBackgroundColor" format="color"/>
+    </declare-styleable>
+</resources>
