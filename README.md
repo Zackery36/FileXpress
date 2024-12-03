@@ -14,7 +14,10 @@
 3. **Share the Link**: Other devices on the same Wi-Fi can access the files by opening the link in their browser.
 
 ## 📷Screenshots
-> *Include screenshots of your app interface here.*
+![Screenshot 1](https://drive.google.com/uc?id=1AEdxP33dLquxm3IbiN0gX8JeZhl0B6v4)
+![Screenshot 2](https://drive.google.com/uc?id=1ADhI6YdbL5cGk1a-LlKnPxE28NNGnxKG)
+![Screenshot 3](https://drive.google.com/uc?id=1ABW1fknxIU0Dn9XIKPCPrEKUTlcnuPMc)
+![Screenshot 4](https://drive.google.com/uc?id=1A8KfARty-pXamSgc1zf6guMogso9h_hl)
 
 ## 🛠️Getting Started
 1. Clone the repository:
