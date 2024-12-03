@@ -35,6 +35,17 @@ import java.net.URLEncoder;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 
 public class FileOperations {
 
@@ -50,15 +61,42 @@ public class FileOperations {
 
     // Launch the file picker
     public void selectFile(int requestCode) {
-        // Create an intent to launch the custom FileBrowserActivity
-        Intent intent = new Intent(activity, FileBrowserActivity.class);
-
-        // Optionally, pass the requestCode if you need it in the FileBrowserActivity (through extras)
-        intent.putExtra("requestCode", requestCode);
-
-        // Start the custom FileBrowserActivity
-        activity.startActivityForResult(intent, requestCode);
+        // Check for permissions first
+        if (hasRequiredPermissions()) {
+            // Launch the FileBrowserActivity if permissions are granted
+            Intent intent = new Intent(activity, FileBrowserActivity.class);
+            intent.putExtra("requestCode", requestCode);
+            activity.startActivityForResult(intent, requestCode);
+        } else {
+            // Request permissions if not granted
+            requestMediaPermissions();
+        }
     }
+
+    // Helper method to check if permissions are granted
+    private boolean hasRequiredPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // API 33+
+            return ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED &&
+                    ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_MEDIA_VIDEO) == PackageManager.PERMISSION_GRANTED;
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // API 23+
+            return ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        } else {
+            return true; // Permissions are not required for older versions
+        }
+    }
+
+    // Request permissions if not granted
+    private void requestMediaPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // API 33+
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO}, 1);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // API 23+
+            ActivityCompat.requestPermissions(activity,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+        }
+    }
+
+
 
     // This method processes multiple files at once
     public void handleMultipleFileSelection(List<Uri> fileUris) {

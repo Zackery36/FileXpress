@@ -56,24 +56,28 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         holder.fileName.setEllipsize(TextUtils.TruncateAt.END); // Add ellipsis
         holder.fileName.setMaxLines(1); // Truncate after one line
 
-        // Check if the file is an image
+        // Determine file type and set preview accordingly
         if (isImageFile(file)) {
             Glide.with(context)
                     .load(file)
                     .apply(new RequestOptions().override(100, 100)) // Lower resolution for optimization
-                    .placeholder(R.drawable.ic_file)
+                    .placeholder(R.drawable.ic_image)
                     .into(holder.filePreview);
         } else if (isVideoFile(file)) {
-            // Generate video thumbnail with Glide for better caching
             Glide.with(context)
                     .asBitmap()
                     .load(file)
                     .apply(new RequestOptions().override(100, 100)) // Lower resolution for optimization
-                    .placeholder(R.drawable.ic_file)
+                    .placeholder(R.drawable.ic_video)
                     .into(holder.filePreview);
-        } else {
+        } else if (isDocumentFile(file)) {
+            holder.filePreview.setImageResource(R.drawable.ic_document);
+        } else if (file.isDirectory()) {
             holder.filePreview.setImageResource(R.drawable.ic_folder);
+        } else {
+            holder.filePreview.setImageResource(R.drawable.ic_file);
         }
+
         // Handle checkbox toggle
         holder.fileCheckBox.setOnCheckedChangeListener(null); // Prevent triggering listener on bind
         holder.fileCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -81,9 +85,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
         });
 
         // Handle click events
-        holder.itemView.setOnClickListener(v -> {
-            holder.fileCheckBox.toggle(); // Toggle checkbox manually
-        });
+        holder.itemView.setOnClickListener(v -> holder.fileCheckBox.toggle()); // Toggle checkbox manually
     }
 
     @Override
@@ -115,6 +117,11 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
     private boolean isVideoFile(File file) {
         String[] videoExtensions = {".mp4", ".mkv", ".avi", ".mov", ".flv"};
         return endsWithAny(file.getName().toLowerCase(), videoExtensions);
+    }
+
+    private boolean isDocumentFile(File file) {
+        String[] documentExtensions = {".pdf", ".doc", ".docx", ".txt", ".xls", ".xlsx", ".ppt", ".pptx"};
+        return endsWithAny(file.getName().toLowerCase(), documentExtensions);
     }
 
     private boolean endsWithAny(String name, String[] extensions) {
